@@ -1,4 +1,4 @@
-package br.com.coderealm.realmsms;
+package br.com.coderealm.pigeon;
 
 import org.junit.Test;
 

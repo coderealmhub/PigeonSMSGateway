@@ -1,4 +1,4 @@
-package br.com.coderealm.realmsms;
+package br.com.coderealm.pigeon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 showMainActivity();
             }
-        }, 3000);
+        }, 1500);
     }
 
     private void showMainActivity() {

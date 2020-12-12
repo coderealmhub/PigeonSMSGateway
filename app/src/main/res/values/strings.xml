@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">RealmSMS</string>
+    <string name="app_name">Pigeon</string>
 
     <string name="hint_phone">Insira o número do celular</string>
     <string name="hint_message">Escreva a mensagem</string>
     <string name="btn_send">Enviar mensagem</string>
+    <string name="poweredBy">CodeRealm</string>
 </resources>
