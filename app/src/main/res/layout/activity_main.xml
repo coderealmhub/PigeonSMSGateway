@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sms"
+        android:layout_gravity="center"
+        android:paddingBottom="10dp">
+
+    </ImageView>
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_phone"
+        android:inputType="number"
+        android:layout_margin="8dp"
+        android:paddingTop="10dp"
+        app:mask="(__) _____-____"
+        app:maskCharacter="_"/>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="@string/hint_message"
+        android:inputType="textLongMessage"
+        android:gravity="top"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_send"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
