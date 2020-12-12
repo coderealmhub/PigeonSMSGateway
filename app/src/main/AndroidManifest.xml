@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.coderealm.pigeon">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name = "android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealmSMS">
-        <activity android:name="br.com.coderealm.pigeon.SplashActivity">
+
+
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RealmSMS.NoActionBar" />
+
+        <activity android:name=".ui.intro.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.com.coderealm.pigeon.MainActivity">
 
-        </activity>
+        <activity android:name=".ui.SMSActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".ui.SettingsActivity"
+            android:label="@string/title_activity_settings"/>
     </application>
 
 </manifest>

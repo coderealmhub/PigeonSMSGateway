@@ -2,9 +2,9 @@ package br.com.coderealm.pigeon.api.services;
 
 import android.os.AsyncTask;
 
-public class AsyncTaskHelps extends AsyncTask<String, String, String> {
+public class ReciveSMS extends AsyncTask<Integer, Integer, String> {
 
-    public AsyncTaskHelps(){}
+    public ReciveSMS(){}
 
     @Override
     protected void onPreExecute() {
@@ -12,10 +12,16 @@ public class AsyncTaskHelps extends AsyncTask<String, String, String> {
     }
 
     @Override
-    protected String doInBackground(String... strings) {
+    protected String doInBackground(Integer... integers) {
         return null;
     }
 
+    @Override
+    protected void onProgressUpdate(Integer... values) {
+        super.onProgressUpdate(values);
+    }
+
+    @Override
     protected void onPostExecute(String string) {
         super.onPostExecute(string);
     }

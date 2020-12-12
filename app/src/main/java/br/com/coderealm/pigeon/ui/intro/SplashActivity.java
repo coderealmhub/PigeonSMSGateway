@@ -1,10 +1,13 @@
-package br.com.coderealm.pigeon;
+package br.com.coderealm.pigeon.ui.intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.ui.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,14 +22,11 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 showMainActivity();
             }
-        }, 1500);
+        }, 3000);
     }
 
     private void showMainActivity() {
-        Intent intent = new Intent(
-                SplashActivity.this,MainActivity.class
-        );
-        startActivity(intent);
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
         finish();
     }
 }

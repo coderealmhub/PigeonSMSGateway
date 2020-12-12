@@ -1,4 +1,4 @@
-package br.com.coderealm.pigeon;
+package br.com.coderealm.pigeon.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import br.com.coderealm.pigeon.R;
+
+public class SMSActivity extends AppCompatActivity {
 
     private EditText number, message;
     private Button send;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sms);
 
         number = findViewById(R.id.number);
         message = findViewById(R.id.message);
