@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        /*Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
 
         Button btn_send_sms = findViewById(R.id.send_sms);
         btn_send_sms.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btn_sms_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                startActivity(new Intent(MainActivity.this, SMSListActivity.class));
             }
         });
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btn_documentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                startActivity(new Intent(MainActivity.this, DocsActivity.class));
             }
         });
 

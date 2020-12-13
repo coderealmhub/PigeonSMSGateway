@@ -299,7 +299,7 @@
                         app:tint="@color/colorPrimary"
                         android:layout_marginLeft="10dp" /> -->
 
-                    <TextView
+                    <EditText
                         android:id="@+id/device_id"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
@@ -307,7 +307,8 @@
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/device_id"
-                        android:imeOptions="actionDone"/>
+                        android:imeOptions="actionDone"
+                        android:inputType="number" />
 
                 </LinearLayout>
 
