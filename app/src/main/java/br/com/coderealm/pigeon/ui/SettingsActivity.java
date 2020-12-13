@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -21,29 +22,21 @@ import br.com.coderealm.pigeon.helps.SessionManager;
 public class SettingsActivity extends AppCompatActivity {
 
     private SessionManager sessionManager;
-    private Switch btn_switch;
     private EditText send_url, receive_url, status_url, interval;
     private TextView device_id;
+    private Button save_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Settings Save!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });*/
-
         send_url = findViewById(R.id.send_url);
         receive_url = findViewById(R.id.receive_url);
         status_url = findViewById(R.id.status_url);
         interval = findViewById(R.id.interval);
         device_id = findViewById(R.id.device_id);
+        save_settings = findViewById(R.id.btn_save);
 
         sessionManager = new SessionManager(SettingsActivity.this);
 
@@ -63,6 +56,19 @@ public class SettingsActivity extends AppCompatActivity {
                 Snackbar.make(v, "Copiado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
+
+        save_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sessionManager.setKeySendUrl(send_url.getText().toString().trim());
+                sessionManager.setKeyReceiveUrl(receive_url.getText().toString().trim());
+                sessionManager.setKeyStatusUrl(status_url.getText().toString().trim());
+                sessionManager.setKeyInterval(interval.getText().toString().trim());
+
+                Snackbar.make(v, "Configurações salvas!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            }
+        });
+
     }
 
     @Override
