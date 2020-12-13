@@ -12,27 +12,22 @@ import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.helps.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private Switch btn_switch;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
-
-        /*Button btn_send_sms = findViewById(R.id.send_sms);
-        btn_send_sms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SMSActivity.class));
-            }
-        });*/
+        sessionManager = new SessionManager(MainActivity.this);
 
         ImageView btn_send_sms = findViewById(R.id.send_sms);
         btn_send_sms.setOnClickListener(new View.OnClickListener() {
@@ -58,16 +53,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        btn_switch = findViewById(R.id.btn_switch);
+        btn_switch.setChecked(sessionManager.getKeyStatusGateway());
+        btn_switch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SMSActivity.class));
-                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            public void onClick(View v) {
+                if(sessionManager.getKeyStatusGateway()){
+                    sessionManager.setKeyStatusGateway(false);
+                    Snackbar.make(v, "Gateway desativado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }else{
+                    sessionManager.setKeyStatusGateway(true);
+                    Snackbar.make(v, "Gateway ativado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
             }
-        });*/
+        });
     }
 
     @Override
