@@ -4,7 +4,8 @@ import android.os.AsyncTask;
 
 public class ReciveSMS extends AsyncTask<Integer, Integer, String> {
 
-    public ReciveSMS(){}
+    public ReciveSMS() {
+    }
 
     @Override
     protected void onPreExecute() {

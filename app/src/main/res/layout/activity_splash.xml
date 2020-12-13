@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.intro.SplashActivity"
-    android:orientation="vertical"
     android:background="#FFF"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.intro.SplashActivity">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="250dp"
         android:layout_height="175dp"
-        android:src="@drawable/pigeon_splash"
         android:layout_gravity="center"
-        android:paddingBottom="10dp">
-    </ImageView>
+        android:paddingBottom="10dp"
+        android:src="@drawable/pigeon_splash"></ImageView>
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="@string/app_name"
         android:textColor="@color/colorSubText"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingTop="10dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/poweredBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="bottom"
+        android:paddingBottom="10dp"
         android:text="@string/poweredBy"
         android:textColor="@color/colorSubText"
-        android:gravity="bottom"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:paddingBottom="10dp"/>
-
+        android:textStyle="bold" />
 
 
 </LinearLayout>

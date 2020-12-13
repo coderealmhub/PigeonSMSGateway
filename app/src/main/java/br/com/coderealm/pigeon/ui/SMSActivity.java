@@ -1,8 +1,5 @@
 package br.com.coderealm.pigeon.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -16,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.coderealm.pigeon.R;
 
@@ -39,12 +38,12 @@ public class SMSActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-                    if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED){
+                    if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
                         sendSMS();
                     } else {
-                        requestPermissions(new String [] {Manifest.permission.SEND_SMS},1);
+                        requestPermissions(new String[]{Manifest.permission.SEND_SMS}, 1);
                     }
                 }
 
@@ -56,7 +55,7 @@ public class SMSActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (message.hasFocus()) {
                     v.getParent().requestDisallowInterceptTouchEvent(true);
-                    switch (event.getAction() & MotionEvent.ACTION_MASK){
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
                         case MotionEvent.ACTION_SCROLL:
                             v.getParent().requestDisallowInterceptTouchEvent(false);
                             return true;
@@ -66,17 +65,18 @@ public class SMSActivity extends AppCompatActivity {
             }
         });
     }
-    private void sendSMS(){
+
+    private void sendSMS() {
         String phoneNo = number.getText().toString().trim();
         String SMS = message.getText().toString().trim();
 
-        try{
+        try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNo,null,SMS,null,null);
-            Toast.makeText(this,"Mensagem enviada", Toast.LENGTH_SHORT).show();
+            smsManager.sendTextMessage(phoneNo, null, SMS, null, null);
+            Toast.makeText(this, "Mensagem enviada", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(this,"Falha ao enviar mensagem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Falha ao enviar mensagem", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -86,6 +86,7 @@ public class SMSActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Enviar SMS");
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -93,12 +94,11 @@ public class SMSActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainActivity.class));
                 finishAffinity();
                 break;
-            default:break;
+            default:
+                break;
         }
         return true;
     }
-
-
 
 
 }

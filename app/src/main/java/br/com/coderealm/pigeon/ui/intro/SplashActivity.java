@@ -1,10 +1,10 @@
 package br.com.coderealm.pigeon.ui.intro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.coderealm.pigeon.R;
 import br.com.coderealm.pigeon.ui.MainActivity;
