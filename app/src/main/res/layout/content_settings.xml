@@ -295,7 +295,7 @@
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/device_id"
-                        android:imeOptions="actionDone"/>
+                        android:imeOptions="actionDone" />
 
                 </LinearLayout>
 
