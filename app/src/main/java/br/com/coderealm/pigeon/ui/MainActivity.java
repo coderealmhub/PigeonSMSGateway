@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView btn_sms_list = findViewById(R.id.sms_list);
+        /*ImageView btn_sms_list = findViewById(R.id.sms_list);
         btn_sms_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SMSListActivity.class));
             }
-        });
+        });*/
 
         ImageView btn_settings = findViewById(R.id.settings);
         btn_settings.setOnClickListener(new View.OnClickListener() {
