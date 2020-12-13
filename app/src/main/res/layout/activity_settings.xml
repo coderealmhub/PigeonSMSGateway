@@ -9,7 +9,7 @@ android:layout_height="match_parent"
 android:background="@drawable/bg_greedient"
 tools:context=".ui.SettingsActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+  <!--  <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.RealmSMS.AppBarOverlay"
@@ -22,7 +22,7 @@ tools:context=".ui.SettingsActivity">
             android:background="@color/colorGreen"
             app:popupTheme="@style/Theme.RealmSMS.PopupOverlay" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout> -->
 
     <include layout="@layout/content_settings" />
 
