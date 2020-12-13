@@ -4,7 +4,8 @@ import android.os.AsyncTask;
 
 public class StatusSMS extends AsyncTask<Integer, Integer, String> {
 
-    public StatusSMS(){}
+    public StatusSMS() {
+    }
 
     @Override
     protected void onPreExecute() {
