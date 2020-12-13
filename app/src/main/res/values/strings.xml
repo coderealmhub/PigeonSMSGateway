@@ -1,12 +1,34 @@
 <resources>
     <string name="app_name">Pigeon SMS Gateway</string>
+    <string name="app_first_name">Pigeon</string>
+    <string name="app_last_name">SMS Gateway</string>
+    <string name="welcome">Bem-vindo!</string>
+    <string name="text1">Acesse nosso menu de opções abaixo, ou envie uma mensagem agora.</string>
+    <string name="text2">Confira o número e a mensagem antes de enviar a mensagem</string>
 
     <string name="hint_phone">Insira o número do celular</string>
     <string name="hint_message">Escreva a mensagem</string>
 
     <string name="btn_send">Enviar mensagem</string>
+    <string name="btn_save">Salvar configurações</string>
 
-    <string name="poweredBy">CodeRealm</string>
+    <string name="menu_options">Menu de opções</string>
+    <string name="menu_sms">SMS</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="menu_documentation">Docs</string>
+
+    <string name="number">Número</string>
+    <string name="message">Mensagem</string>
+
+    <string name="send_url">Enviar URL</string>
+    <string name="receive_url">Receber URL</string>
+    <string name="status_url">Status URL</string>
+    <string name="interval">Intervalo (mins)</string>
+    <string name="device_id">ID do dispositivo</string>
+    <string name="enable_sms_sending">Habilitar o envio de SMS</string>
+
+
+    <string name="poweredBy">CodeRealm.</string>
 
     <string name="title_activity_sms">SMS</string>
     <string name="title_activity_settings">Settings</string>
