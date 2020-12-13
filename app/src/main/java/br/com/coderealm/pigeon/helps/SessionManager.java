@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 public class SessionManager {
 
     private static final String PREFERENCES_NAME = "PingeonSMSGateway";
+    private static final String KEY_STATUS_GATEWAY = "status_gateway";
     private static final String KEY_SEND_URL = "send_url";
     private static final String KEY_RECEIVE_URL = "receive_url";
     private static final String KEY_STATUS_URL = "status_url";
@@ -25,6 +26,15 @@ public class SessionManager {
         utils = new Utils(context);
 
         setKeyDeviceKey(utils.getAndroidID());
+    }
+
+    public boolean getKeyStatusGateway() {
+        return sharedPreferences.getBoolean(KEY_STATUS_GATEWAY, false);
+    }
+
+    public void setKeyStatusGateway(boolean status_gateway) {
+        editor.putBoolean(KEY_STATUS_GATEWAY, status_gateway);
+        editor.commit();
     }
 
     public String getKeySendUrl() {

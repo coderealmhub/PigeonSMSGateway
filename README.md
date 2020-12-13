@@ -38,4 +38,4 @@ them can be use to send and receive SMS via HTTP API easily and freely (with no 
  
  ## Baseline
  
- [SMSHub](https://github.com/juancrescente/SMSHub)
+ - [SMSHub](https://github.com/juancrescente/SMSHub)
