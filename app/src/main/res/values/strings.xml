@@ -9,12 +9,13 @@
     <string name="about">Sobre</string>
     <string name="who_developed">
         O aplicativo Pigeon SMS Gateway foi desenvolvido e é mantido pela
-        <a href="https://code.realmapp.com.br">CodeRealm</a>.<br/>
-        Para acessar a documentação do Pigeon clique no botão abaixo.
+        <a href="https://code.realmapp.com.br">CodeRealm</a>.
     </string>
 
 
     <string name="documentation_title">Documentação</string>
+    <string name="settings_title">Configurações</string>
+    <string name="sms_list_title">Suas mensagens</string>
     <string name="documentation_link">Ir para a documentação</string>
 
     <string name="hint_phone">Insira o número do celular</string>
