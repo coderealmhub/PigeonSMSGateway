@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -14,28 +13,29 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/settings_title"
         android:fontFamily="@font/msemi"
-        android:textSize="26sp"
+        android:text="@string/settings_title"
         android:textColor="#FFF"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:background="@drawable/bg_banner"
             android:layout_width="match_parent"
             android:layout_height="550dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="10dp"
-            android:orientation="vertical"
+            android:background="@drawable/bg_banner"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent">
@@ -44,13 +44,13 @@
                 android:id="@+id/btn_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/enable_sms_sending"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
                 android:fontFamily="@font/msemi"
+                android:text="@string/enable_sms_sending"
                 android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"/>
+                android:textColor="@color/colorTextSecondary" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -79,29 +79,30 @@
                         android:id="@+id/send_url"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/send_url"
-                        android:fontFamily="@font/mreg"
-                        android:inputType="textUri"
-                        android:imeOptions="actionNext"
                         android:layout_margin="8dp"
-                        android:background="@null"/>
+                        android:background="@null"
+                        android:fontFamily="@font/mreg"
+                        android:hint="@string/send_url"
+                        android:imeOptions="actionNext"
+                        android:inputType="textUri" />
 
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:layout_marginLeft="41dp"
                     android:background="@color/white"
+                    android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:text="@string/send_url"
-                    android:fontFamily="@font/msemi"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_send_url"
-                    app:layout_constraintTop_toTopOf="@id/layout_send_url"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="41dp" />
+                    app:layout_constraintTop_toTopOf="@id/layout_send_url" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,29 +132,30 @@
                         android:id="@+id/receive_url"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/receive_url"
-                        android:fontFamily="@font/mreg"
-                        android:inputType="textUri"
-                        android:imeOptions="actionNext"
                         android:layout_margin="8dp"
-                        android:background="@null"/>
+                        android:background="@null"
+                        android:fontFamily="@font/mreg"
+                        android:hint="@string/receive_url"
+                        android:imeOptions="actionNext"
+                        android:inputType="textUri" />
 
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:layout_marginLeft="41dp"
                     android:background="@color/white"
+                    android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:text="@string/receive_url"
-                    android:fontFamily="@font/msemi"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_receive_url"
-                    app:layout_constraintTop_toTopOf="@id/layout_receive_url"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="41dp" />
+                    app:layout_constraintTop_toTopOf="@id/layout_receive_url" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -183,29 +185,30 @@
                         android:id="@+id/status_url"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:hint="@string/status_url"
-                        android:fontFamily="@font/mreg"
-                        android:imeOptions="actionNext"
-                        android:inputType="textUri"
                         android:layout_margin="8dp"
-                        android:background="@null"/>
+                        android:background="@null"
+                        android:fontFamily="@font/mreg"
+                        android:hint="@string/status_url"
+                        android:imeOptions="actionNext"
+                        android:inputType="textUri" />
 
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:layout_marginLeft="41dp"
                     android:background="@color/white"
+                    android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:text="@string/status_url"
-                    android:fontFamily="@font/msemi"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_status_url"
-                    app:layout_constraintTop_toTopOf="@id/layout_status_url"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="41dp" />
+                    app:layout_constraintTop_toTopOf="@id/layout_status_url" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -235,29 +238,30 @@
                         android:id="@+id/interval"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:inputType="number"
-                        android:hint="@string/interval"
-                        android:fontFamily="@font/mreg"
-                        android:imeOptions="actionNext"
                         android:layout_margin="8dp"
-                        android:background="@null"/>
+                        android:background="@null"
+                        android:fontFamily="@font/mreg"
+                        android:hint="@string/interval"
+                        android:imeOptions="actionNext"
+                        android:inputType="number" />
 
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:layout_marginLeft="41dp"
                     android:background="@color/white"
+                    android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:text="@string/interval"
-                    android:fontFamily="@font/msemi"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_interval"
-                    app:layout_constraintTop_toTopOf="@id/layout_interval"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="41dp" />
+                    app:layout_constraintTop_toTopOf="@id/layout_interval" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -283,48 +287,48 @@
                         app:tint="@color/colorPrimary"
                         android:layout_marginLeft="10dp" /> -->
 
-                    <EditText
+                    <TextView
                         android:id="@+id/device_id"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:inputType="number"
-                        android:hint="@string/device_id"
-                        android:fontFamily="@font/mreg"
-                        android:imeOptions="actionDone"
                         android:layout_margin="8dp"
-                        android:background="@null"/>
+                        android:background="@null"
+                        android:fontFamily="@font/mreg"
+                        android:hint="@string/device_id"
+                        android:imeOptions="actionDone"/>
 
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
+                    android:layout_marginLeft="41dp"
                     android:background="@color/white"
+                    android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:text="@string/device_id"
-                    android:fontFamily="@font/msemi"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_device_id"
-                    app:layout_constraintTop_toTopOf="@id/layout_device_id"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="41dp" />
+                    app:layout_constraintTop_toTopOf="@id/layout_device_id" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <Button
                 android:id="@+id/btn_save"
-                android:layout_marginTop="26dp"
-                android:fontFamily="@font/msemi"
-                android:background="@drawable/bg_button"
-                android:text="@string/btn_save"
-                android:textColor="#FFF"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                style="@style/Widget.AppCompat.Button.Borderless" />
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/bg_button"
+                android:fontFamily="@font/msemi"
+                android:text="@string/btn_save"
+                android:textColor="#FFF" />
         </LinearLayout>
 
 

@@ -7,11 +7,11 @@ public class Utils {
 
     private Context context;
 
-    public Utils(Context context){
+    public Utils(Context context) {
         this.context = context;
     }
 
-    public String getAndroidID(){
+    public String getAndroidID() {
         String androidId = Settings.Secure.getString(this.context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
         return androidId;

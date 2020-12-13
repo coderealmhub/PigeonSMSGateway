@@ -1,18 +1,19 @@
 package br.com.coderealm.pigeon.ui;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import java.util.UUID;
+import com.google.android.material.snackbar.Snackbar;
 
 import br.com.coderealm.pigeon.R;
 import br.com.coderealm.pigeon.helps.SessionManager;
@@ -21,7 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     private SessionManager sessionManager;
     private Switch btn_switch;
-    private EditText send_url, receive_url, status_url, interval, device_id;
+    private EditText send_url, receive_url, status_url, interval;
+    private TextView device_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,17 @@ public class SettingsActivity extends AppCompatActivity {
         status_url.setText(sessionManager.getKeyStatusUrl());
         interval.setText(sessionManager.getKeyInterval());
         device_id.setText(sessionManager.getKeyDeviceKey());
+
+        device_id.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("label", sessionManager.getKeyDeviceKey());
+                clipboard.setPrimaryClip(clip);
+
+                Snackbar.make(v, "Copiado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            }
+        });
     }
 
     @Override

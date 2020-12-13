@@ -79,11 +79,9 @@ public class SMSActivity extends AppCompatActivity {
             Toast.makeText(this, "Falha ao enviar mensagem", Toast.LENGTH_SHORT).show();
         }
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Enviar SMS");
-
     }
 
     @Override
