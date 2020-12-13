@@ -24,9 +24,9 @@
         android:id="@+id/textViewAppName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:fontFamily="@font/mreg"
         android:text="@string/app_last_name"
         android:textColor="#FFF"
@@ -39,9 +39,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="250dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/bg_banner"
         android:gravity="center_horizontal"
@@ -67,32 +67,23 @@
             android:textColor="@color/colorSubText"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Switch
+            android:id="@+id/btn_switch"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="8dp"
             android:layout_marginRight="50dp"
-            android:fontFamily="@font/mreg"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
             android:gravity="center_horizontal"
-            android:lineSpacingExtra="15dp"
-            android:text="@string/text1"
             android:textAlignment="center"
-            android:textColor="@color/colorSubText"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/send_sms"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/bg_button"
+            android:lineSpacingExtra="15dp"
             android:fontFamily="@font/msemi"
-            android:text="@string/btn_send"
-            android:textColor="#FFF" />
+            android:text="@string/enable_sms_sending"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextSecondary" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

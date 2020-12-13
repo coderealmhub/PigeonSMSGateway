@@ -8,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.coderealm.pigeon.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Switch btn_switch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +26,21 @@ public class MainActivity extends AppCompatActivity {
         /*Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
 
-        Button btn_send_sms = findViewById(R.id.send_sms);
+        /*Button btn_send_sms = findViewById(R.id.send_sms);
+        btn_send_sms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SMSActivity.class));
+            }
+        });*/
+
+        ImageView btn_send_sms = findViewById(R.id.send_sms);
         btn_send_sms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SMSActivity.class));
             }
         });
-
-        /*ImageView btn_sms_list = findViewById(R.id.sms_list);
-        btn_sms_list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SMSListActivity.class));
-            }
-        });*/
 
         ImageView btn_settings = findViewById(R.id.settings);
         btn_settings.setOnClickListener(new View.OnClickListener() {
