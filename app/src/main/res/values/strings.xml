@@ -3,7 +3,7 @@
     <string name="app_first_name">Pigeon</string>
     <string name="app_last_name">SMS Gateway</string>
     <string name="welcome">Bem-vindo!</string>
-    <string name="text1">Acesse nosso menu de opções abaixo, ou envie uma mensagem agora.</string>
+    <string name="text1">Acesse nosso menu de opções, ou envie uma mensagem agora.</string>
     <string name="text2">Confira o número e a mensagem antes de enviar a mensagem</string>
 
     <string name="hint_phone">Insira o número do celular</string>
