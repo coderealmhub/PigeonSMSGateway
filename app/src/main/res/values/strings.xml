@@ -42,5 +42,13 @@
     <string name="poweredBy">CodeRealm.</string>
 
     <string name="title_activity_sms">SMS</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_settings">Configurações</string>
+
+    <string name="gateway_enabled">Gateway habilitado</string>
+    <string name="gateway_disabled">Gateway desabilitado</string>
+
+    <string name="message_sent">Mensagem enviada</string>
+    <string name="message_failed">Falha no envio da mensagem</string>
+
+
 </resources>

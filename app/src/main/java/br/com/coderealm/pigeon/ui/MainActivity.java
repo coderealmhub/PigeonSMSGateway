@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(sessionManager.getKeyStatusGateway()){
                     sessionManager.setKeyStatusGateway(false);
-                    Snackbar.make(v, "Gateway desativado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Snackbar.make(v, R.string.gateway_disabled, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 }else{
                     sessionManager.setKeyStatusGateway(true);
-                    Snackbar.make(v, "Gateway ativado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Snackbar.make(v, R.string.gateway_enabled, Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 }
             }
         });
