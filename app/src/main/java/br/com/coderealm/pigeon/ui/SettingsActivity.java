@@ -1,14 +1,18 @@
 package br.com.coderealm.pigeon.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.UUID;
 
 import br.com.coderealm.pigeon.R;
 import br.com.coderealm.pigeon.helps.SessionManager;
@@ -18,8 +22,6 @@ public class SettingsActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     private Switch btn_switch;
     private EditText send_url, receive_url, status_url, interval, device_id;
-
-    private String android_id = Settings.Secure.getString(getBaseContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +55,6 @@ public class SettingsActivity extends AppCompatActivity {
         receive_url.setText(sessionManager.getKeyReceiveUrl());
         status_url.setText(sessionManager.getKeyStatusUrl());
         interval.setText(sessionManager.getKeyInterval());
-
-        sessionManager.setKeyDeviceKey(android_id);
         device_id.setText(sessionManager.getKeyDeviceKey());
     }
 
@@ -70,4 +70,5 @@ public class SettingsActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }

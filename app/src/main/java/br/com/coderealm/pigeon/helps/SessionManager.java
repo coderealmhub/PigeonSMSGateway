@@ -15,12 +15,16 @@ public class SessionManager {
     private int PRIVATE_MODE = 0;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private Utils utils;
 
 
     public SessionManager(Context context) {
         this.context = context;
         sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, PRIVATE_MODE);
         editor = sharedPreferences.edit();
+        utils = new Utils(context);
+
+        setKeyDeviceKey(utils.getAndroidID());
     }
 
     public String getKeySendUrl() {
@@ -60,7 +64,7 @@ public class SessionManager {
     }
 
     public String getKeyDeviceKey() {
-        return sharedPreferences.getString(KEY_DEVICE_KEY, "");
+        return sharedPreferences.getString(KEY_DEVICE_KEY, utils.getAndroidID());
     }
 
     public void setKeyDeviceKey(String deviceKey) {
