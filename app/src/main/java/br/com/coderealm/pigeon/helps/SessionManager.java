@@ -28,7 +28,7 @@ public class SessionManager {
     }
 
     public String getKeySendUrl() {
-        return sharedPreferences.getString(KEY_SEND_URL, "https://localhost/api/send");
+        return sharedPreferences.getString(KEY_SEND_URL, "http://127.0.0.1:8000/send");
     }
 
     public void setKeySendUrl(String url) {
@@ -37,7 +37,7 @@ public class SessionManager {
     }
 
     public String getKeyReceiveUrl() {
-        return sharedPreferences.getString(KEY_RECEIVE_URL, "https://localhost/api/receive");
+        return sharedPreferences.getString(KEY_RECEIVE_URL, "http://127.0.0.1:8000/receive");
     }
 
     public void setKeyReceiveUrl(String url) {
@@ -46,7 +46,7 @@ public class SessionManager {
     }
 
     public String getKeyStatusUrl() {
-        return sharedPreferences.getString(KEY_STATUS_URL, "https://localhost/api/status");
+        return sharedPreferences.getString(KEY_STATUS_URL, "http://127.0.0.1:8000/status");
     }
 
     public void setKeyStatusUrl(String url) {
