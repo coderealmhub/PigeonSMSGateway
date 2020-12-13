@@ -77,7 +77,6 @@ public class SMSActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "Falha ao enviar mensagem", Toast.LENGTH_SHORT).show();
-
         }
 
 
