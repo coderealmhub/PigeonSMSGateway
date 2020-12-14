@@ -37,14 +37,14 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
-        String SEND_URL = sessionManager.getKeySendUrl() + "?device_id=" + sessionManager.getKeyDeviceKey();
-        Timber.d("RESPONSE: " + SEND_URL);
+        String SEND_URL = sessionManager.getKeySendUrl() + "/" + sessionManager.getKeyDeviceKey();
+        Timber.d("Request: " + SEND_URL);
 
         StringRequest request = new StringRequest(Request.Method.GET, SEND_URL, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Timber.d("RESPONSE: " + response);
+                Timber.d("Response: " + response);
 
                 try {
                     JSONObject jObj = new JSONObject(response);
