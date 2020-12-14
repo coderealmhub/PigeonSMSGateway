@@ -31,9 +31,7 @@
     <string name="number">Número</string>
     <string name="message">Mensagem</string>
 
-    <string name="send_url">Enviar URL</string>
-    <string name="receive_url">Receber URL</string>
-    <string name="status_url">Status URL</string>
+    <string name="endpoint">Endpoint</string>
     <string name="interval">Intervalo (millis)</string>
     <string name="device_id">ID do dispositivo</string>
     <string name="enable_sms_sending">Habilitar o envio de SMS</string>

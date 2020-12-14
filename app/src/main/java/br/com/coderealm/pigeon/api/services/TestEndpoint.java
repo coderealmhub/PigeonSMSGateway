@@ -18,14 +18,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.coderealm.pigeon.helps.SessionManager;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import timber.log.Timber;
 
-public class SendSMS extends AsyncTask<Integer, Integer, String> {
+public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
 
     private Context context;
     private SessionManager sessionManager;
 
-    public SendSMS(Context context) {
+    public TestEndpoint(Context context) {
         this.context = context;
         sessionManager = new SessionManager(context);
     }
@@ -37,10 +38,10 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
-        String SEND_URL = sessionManager.getKeyEndpoint() + "/" + sessionManager.getKeyDeviceKey();
-        Timber.d("Request: " + SEND_URL);
+        String ENDPOINT = sessionManager.getKeyEndpoint();
+        Timber.d("Request: " + ENDPOINT);
 
-        StringRequest request = new StringRequest(Request.Method.GET, SEND_URL, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, ENDPOINT, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -48,17 +49,33 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    String title = jObj.getString("title");
+                    String description = jObj.getString("description");
+                    String docs = jObj.getString("docs");
+                    String redoc = jObj.getString("redoc");
+                    String version = jObj.getString("version");
 
-                    if (!error) {
-                        final JSONArray jsonArray = jObj.getJSONArray("response");
+                    Timber.d("Status endpoint: " + title + docs + redoc + version);
 
+                    if (!title.isEmpty()) {
+                        new SweetAlertDialog(context)
+                                .setTitleText("Endpoint Verificado!")
+                                .setContentText(title)
+                                .show();
                     } else {
                         String message = jObj.getString("message");
+                        new SweetAlertDialog(context)
+                                .setTitleText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
+                                .show();
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Timber.e("Error: " + e.getMessage());
+                    new SweetAlertDialog(context)
+                            .setTitleText(e.getMessage())
+                            .setContentText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
+                            .show();
                 }
 
             }
@@ -66,6 +83,10 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Timber.e("Error: " + error.getMessage());
+                new SweetAlertDialog(context)
+                        .setTitleText(error.getMessage())
+                        .setContentText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
+                        .show();
             }
         }) {
             @Override

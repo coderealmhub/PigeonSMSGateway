@@ -58,13 +58,13 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <EditText
-                        android:id="@+id/send_url"
+                        android:id="@+id/endpoint"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_margin="8dp"
                         android:background="@null"
                         android:fontFamily="@font/mreg"
-                        android:hint="@string/send_url"
+                        android:hint="@string/endpoint"
                         android:imeOptions="actionNext"
                         android:inputType="textUri"
                         android:textColor="@color/black" />
@@ -81,120 +81,12 @@
                     android:fontFamily="@font/msemi"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
-                    android:text="@string/send_url"
+                    android:text="@string/endpoint"
                     android:textAllCaps="true"
                     android:textColor="@color/colorTextSecondary"
                     app:layout_constraintBottom_toTopOf="@id/layout_send_url"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/layout_send_url" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp">
-
-                <LinearLayout
-                    android:id="@+id/layout_receive_url"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_input"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toTopOf="parent">
-                    <!-- <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_marginStart="10dp"
-                        android:src="@drawable/ic_phone"
-                        app:tint="@color/colorPrimary"
-                        android:layout_marginLeft="10dp" /> -->
-
-                    <EditText
-                        android:id="@+id/receive_url"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_margin="8dp"
-                        android:background="@null"
-                        android:fontFamily="@font/mreg"
-                        android:hint="@string/receive_url"
-                        android:imeOptions="actionNext"
-                        android:inputType="textUri"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="41dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/msemi"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:text="@string/receive_url"
-                    android:textAllCaps="true"
-                    android:textColor="@color/colorTextSecondary"
-                    app:layout_constraintBottom_toTopOf="@id/layout_receive_url"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/layout_receive_url" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp">
-
-                <LinearLayout
-                    android:id="@+id/layout_status_url"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_input"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toTopOf="parent">
-                    <!-- <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_marginStart="10dp"
-                        android:src="@drawable/ic_phone"
-                        app:tint="@color/colorPrimary"
-                        android:layout_marginLeft="10dp" /> -->
-
-                    <EditText
-                        android:id="@+id/status_url"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_margin="8dp"
-                        android:background="@null"
-                        android:fontFamily="@font/mreg"
-                        android:hint="@string/status_url"
-                        android:imeOptions="actionNext"
-                        android:inputType="textUri"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="41dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/msemi"
-                    android:paddingStart="6dp"
-                    android:paddingEnd="6dp"
-                    android:text="@string/status_url"
-                    android:textAllCaps="true"
-                    android:textColor="@color/colorTextSecondary"
-                    app:layout_constraintBottom_toTopOf="@id/layout_status_url"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/layout_status_url" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

@@ -16,12 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.api.services.TestEndpoint;
 import br.com.coderealm.pigeon.helps.SessionManager;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private SessionManager sessionManager;
-    private EditText send_url, receive_url, status_url, interval;
+    private EditText endpoint, interval;
     private TextView device_id;
     private Button save_settings;
 
@@ -30,18 +31,14 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        send_url = findViewById(R.id.send_url);
-        receive_url = findViewById(R.id.receive_url);
-        status_url = findViewById(R.id.status_url);
+        endpoint = findViewById(R.id.endpoint);
         interval = findViewById(R.id.interval);
         device_id = findViewById(R.id.device_id);
         save_settings = findViewById(R.id.btn_save);
 
         sessionManager = new SessionManager(SettingsActivity.this);
 
-        send_url.setText(sessionManager.getKeySendUrl());
-        receive_url.setText(sessionManager.getKeyReceiveUrl());
-        status_url.setText(sessionManager.getKeyStatusUrl());
+        endpoint.setText(sessionManager.getKeyEndpoint());
         interval.setText(sessionManager.getKeyInterval());
         device_id.setText(sessionManager.getKeyDeviceKey());
 
@@ -59,11 +56,9 @@ public class SettingsActivity extends AppCompatActivity {
         save_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sessionManager.setKeySendUrl(send_url.getText().toString().trim());
-                sessionManager.setKeyReceiveUrl(receive_url.getText().toString().trim());
-                sessionManager.setKeyStatusUrl(status_url.getText().toString().trim());
+                new TestEndpoint(SettingsActivity.this).execute();
+                sessionManager.setKeyEndpoint(endpoint.getText().toString().trim());
                 sessionManager.setKeyInterval(interval.getText().toString().trim());
-
                 Snackbar.make(v, "Configurações salvas!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });

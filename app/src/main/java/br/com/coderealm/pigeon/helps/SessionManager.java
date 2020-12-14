@@ -7,9 +7,7 @@ public class SessionManager {
 
     private static final String PREFERENCES_NAME = "PingeonSMSGateway";
     private static final String KEY_STATUS_GATEWAY = "status_gateway";
-    private static final String KEY_SEND_URL = "send_url";
-    private static final String KEY_RECEIVE_URL = "receive_url";
-    private static final String KEY_STATUS_URL = "status_url";
+    private static final String KEY_ENDPOINT = "endpoint";
     private static final String KEY_INTERVAL = "interval";
     private static final String KEY_DEVICE_KEY = "device_KEY";
     private Context context;
@@ -37,35 +35,17 @@ public class SessionManager {
         editor.commit();
     }
 
-    public String getKeySendUrl() {
-        return sharedPreferences.getString(KEY_SEND_URL, "http://127.0.0.1:1404/send");
+    public String getKeyEndpoint() {
+        return sharedPreferences.getString(KEY_ENDPOINT, "http://127.0.0.1:1404");
     }
 
-    public void setKeySendUrl(String url) {
-        editor.putString(KEY_SEND_URL, url);
-        editor.commit();
-    }
-
-    public String getKeyReceiveUrl() {
-        return sharedPreferences.getString(KEY_RECEIVE_URL, "http://127.0.0.1:1404/receive");
-    }
-
-    public void setKeyReceiveUrl(String url) {
-        editor.putString(KEY_RECEIVE_URL, url);
-        editor.commit();
-    }
-
-    public String getKeyStatusUrl() {
-        return sharedPreferences.getString(KEY_STATUS_URL, "http://127.0.0.1:1404/status");
-    }
-
-    public void setKeyStatusUrl(String url) {
-        editor.putString(KEY_STATUS_URL, url);
+    public void setKeyEndpoint(String url) {
+        editor.putString(KEY_ENDPOINT, url);
         editor.commit();
     }
 
     public String getKeyInterval() {
-        return sharedPreferences.getString(KEY_INTERVAL, "1");
+        return sharedPreferences.getString(KEY_INTERVAL, "60000");
     }
 
     public void setKeyInterval(String interval) {
