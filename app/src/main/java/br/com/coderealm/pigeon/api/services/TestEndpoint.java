@@ -55,12 +55,10 @@ public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
                     String redoc = jObj.getString("redoc");
                     String version = jObj.getString("version");
 
-                    Timber.d("Status endpoint: " + title + docs + redoc + version);
-
                     if (!title.isEmpty()) {
                         new SweetAlertDialog(context)
                                 .setTitleText("Endpoint Verificado!")
-                                .setContentText(title)
+                                .setContentText(title + " " + version)
                                 .show();
                     } else {
                         String message = jObj.getString("message");

@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import br.com.coderealm.pigeon.helps.SessionManager;
 import timber.log.Timber;
@@ -37,7 +38,7 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
-        String SEND_URL = sessionManager.getKeyEndpoint() + "/" + sessionManager.getKeyDeviceKey();
+        String SEND_URL = sessionManager.getKeyEndpoint() + "/send/" + sessionManager.getKeyDeviceKey();
         Timber.d("Request: " + SEND_URL);
 
         StringRequest request = new StringRequest(Request.Method.GET, SEND_URL, new Response.Listener<String>() {
@@ -53,6 +54,19 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
                     if (!error) {
                         final JSONArray jsonArray = jObj.getJSONArray("response");
 
+                        for (int i = 0; i < jsonArray.length(); i++){
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                            String uuid = jsonObject.getString("uuid");
+                            String number = jsonObject.getString("number");
+                            String message = jsonObject.getString("message");
+
+                            if(new br.com.coderealm.pigeon.helps.SendSMS(number, message).send()){
+
+                            }else{
+
+                            }
+                        }
                     } else {
                         String message = jObj.getString("message");
                     }

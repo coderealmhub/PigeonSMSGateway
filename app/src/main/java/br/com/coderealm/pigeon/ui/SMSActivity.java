@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.helps.SendSMS;
 
 public class SMSActivity extends AppCompatActivity {
 
@@ -67,21 +68,18 @@ public class SMSActivity extends AppCompatActivity {
     }
 
     private void sendSMS() {
-        String phoneNo = number.getText().toString().trim();
-        String SMS = message.getText().toString().trim();
+        String number_f = number.getText().toString().trim();
+        String message_f = message.getText().toString().trim();
 
-        try {
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNo, null, SMS, null, null);
+        if(new SendSMS(number_f, message_f).send()){
             Toast.makeText(this, R.string.message_sent, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }else{
             Toast.makeText(this, R.string.message_failed, Toast.LENGTH_SHORT).show();
         }
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Enviar SMS");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        //getSupportActionBar().setTitle("Enviar SMS");
     }
 
     @Override
