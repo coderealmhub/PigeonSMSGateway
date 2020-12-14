@@ -3,12 +3,13 @@ package br.com.coderealm.pigeon.helps;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.coderealm.pigeon.api.services.SendSMS;
 
 public class ServiceGateway extends Service {
 
@@ -57,8 +58,7 @@ public class ServiceGateway extends Service {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                Log.i(">>> ", "COUNT: ");
+                new SendSMS(getApplicationContext()).execute();
             }
             stopSelf(startId);
         }

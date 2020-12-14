@@ -11,11 +11,13 @@ import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.snackbar.Snackbar;
-
+import br.com.coderealm.pigeon.BuildConfig;
 import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.helps.Network;
 import br.com.coderealm.pigeon.helps.ServiceGateway;
 import br.com.coderealm.pigeon.helps.SessionManager;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
 
         sessionManager = new SessionManager(MainActivity.this);
 
@@ -59,15 +65,42 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (sessionManager.getKeyStatusGateway()) {
-                    //new SendSMS(MainActivity.this).cancel(true);
-                    stopService(new Intent(MainActivity.this, ServiceGateway.class));
-                    sessionManager.setKeyStatusGateway(false);
-                    Snackbar.make(v, "Gateway desligado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Desconectar")
+                            .setContentText("Tem certeza que você deseja desconectar o Gateway? As SMS deixarão de ser enviadas!")
+                            .setConfirmText("Parar")
+                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    sDialog.dismissWithAnimation();
+                                    stopService(new Intent(MainActivity.this, ServiceGateway.class));
+                                    sessionManager.setKeyStatusGateway(false);
+                                }
+                            }).show();
+                    btn_switch.setChecked(sessionManager.getKeyStatusGateway());
                 } else {
-                    //new SendSMS(MainActivity.this).execute();
-                    startService(new Intent(MainActivity.this, ServiceGateway.class));
-                    sessionManager.setKeyStatusGateway(true);
-                    Snackbar.make(v, "Gateway ligado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Conectar")
+                            .setContentText("Ao iniciar o Gateway seus créditos ou bonus seram consumidos para envio de SMS!")
+                            .setConfirmText("Iniciar")
+                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    sDialog.dismissWithAnimation();
+
+                                    if (new Network().isNetworkConnected(getApplicationContext())) {
+                                        startService(new Intent(MainActivity.this, ServiceGateway.class));
+                                        sessionManager.setKeyStatusGateway(true);
+                                        btn_switch.setChecked(sessionManager.getKeyStatusGateway());
+                                    } else {
+                                        new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                                .setTitleText("Oops...")
+                                                .setContentText("Parace que você está sem conexão com a internet :(")
+                                                .show();
+                                    }
+                                }
+                            }).show();
+                    btn_switch.setChecked(sessionManager.getKeyStatusGateway());
                 }
             }
         });
