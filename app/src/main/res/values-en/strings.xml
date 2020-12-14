@@ -34,7 +34,7 @@
     <string name="send_url">Send URL</string>
     <string name="receive_url">Receive URL</string>
     <string name="status_url">Status URL</string>
-    <string name="interval">Interval (mins)</string>
+    <string name="interval">Interval (millis)</string>
     <string name="device_id">Device ID</string>
     <string name="enable_sms_sending">Enable SMS Sending</string>
 

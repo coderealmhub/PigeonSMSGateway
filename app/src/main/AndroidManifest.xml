@@ -33,6 +33,10 @@
         <activity
             android:name=".ui.SettingsActivity"
             android:label="@string/title_activity_settings" />
+
+        <service
+            android:name=".helps.ServiceGateway"
+            android:label="ServiceGateway" />
     </application>
 
 </manifest>

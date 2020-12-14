@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 
@@ -15,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import br.com.coderealm.pigeon.R;
+import br.com.coderealm.pigeon.helps.ServiceGateway;
 import br.com.coderealm.pigeon.helps.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -58,16 +58,21 @@ public class MainActivity extends AppCompatActivity {
         btn_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sessionManager.getKeyStatusGateway()){
+                if (sessionManager.getKeyStatusGateway()) {
+                    //new SendSMS(MainActivity.this).cancel(true);
+                    stopService(new Intent(MainActivity.this, ServiceGateway.class));
                     sessionManager.setKeyStatusGateway(false);
-                    Snackbar.make(v, R.string.gateway_disabled, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                }else{
+                    Snackbar.make(v, "Gateway desligado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                } else {
+                    //new SendSMS(MainActivity.this).execute();
+                    startService(new Intent(MainActivity.this, ServiceGateway.class));
                     sessionManager.setKeyStatusGateway(true);
-                    Snackbar.make(v, R.string.gateway_enabled, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Snackbar.make(v, "Gateway ligado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 }
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

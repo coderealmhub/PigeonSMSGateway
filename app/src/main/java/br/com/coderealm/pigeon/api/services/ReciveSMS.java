@@ -1,10 +1,14 @@
 package br.com.coderealm.pigeon.api.services;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 public class ReciveSMS extends AsyncTask<Integer, Integer, String> {
 
-    public ReciveSMS() {
+    private Context context;
+
+    public ReciveSMS(Context context) {
+        this.context = context;
     }
 
     @Override

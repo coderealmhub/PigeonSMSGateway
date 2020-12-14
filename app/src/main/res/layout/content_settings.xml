@@ -41,7 +41,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,6 +66,7 @@
                         android:fontFamily="@font/mreg"
                         android:hint="@string/send_url"
                         android:imeOptions="actionNext"
+                        android:textColor="@color/black"
                         android:inputType="textUri" />
 
                 </LinearLayout>
@@ -118,6 +118,7 @@
                         android:layout_height="40dp"
                         android:layout_margin="8dp"
                         android:background="@null"
+                        android:textColor="@color/black"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/receive_url"
                         android:imeOptions="actionNext"
@@ -173,6 +174,7 @@
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/status_url"
+                        android:textColor="@color/black"
                         android:imeOptions="actionNext"
                         android:inputType="textUri" />
 
@@ -225,6 +227,7 @@
                         android:layout_margin="8dp"
                         android:background="@null"
                         android:fontFamily="@font/mreg"
+                        android:textColor="@color/black"
                         android:hint="@string/interval"
                         android:imeOptions="actionNext"
                         android:inputType="number" />
@@ -279,6 +282,7 @@
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/device_id"
+                        android:textColor="@color/black"
                         android:imeOptions="actionDone" />
 
                 </LinearLayout>
