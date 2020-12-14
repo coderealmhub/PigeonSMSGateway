@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                                     if (new Network().isNetworkConnected(getApplicationContext())) {
                                         startService(new Intent(MainActivity.this, ServiceGateway.class));
                                         sessionManager.setKeyStatusGateway(true);
-                                        btn_switch.setChecked(sessionManager.getKeyStatusGateway());
                                     } else {
                                         new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
                                                 .setTitleText("Oops...")
