@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -71,9 +70,9 @@ public class SMSActivity extends AppCompatActivity {
         String number_f = number.getText().toString().trim();
         String message_f = message.getText().toString().trim();
 
-        if(new SendSMS(number_f, message_f).send()){
+        if (new SendSMS(number_f, message_f).send()) {
             Toast.makeText(this, R.string.message_sent, Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(this, R.string.message_failed, Toast.LENGTH_SHORT).show();
         }
 

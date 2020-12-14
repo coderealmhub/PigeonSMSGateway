@@ -16,7 +16,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import br.com.coderealm.pigeon.helps.SessionManager;
 import timber.log.Timber;
@@ -54,16 +53,16 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
                     if (!error) {
                         final JSONArray jsonArray = jObj.getJSONArray("response");
 
-                        for (int i = 0; i < jsonArray.length(); i++){
+                        for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                             String uuid = jsonObject.getString("uuid");
                             String number = jsonObject.getString("number");
                             String message = jsonObject.getString("message");
 
-                            if(new br.com.coderealm.pigeon.helps.SendSMS(number, message).send()){
+                            if (new br.com.coderealm.pigeon.helps.SendSMS(number, message).send()) {
 
-                            }else{
+                            } else {
 
                             }
                         }

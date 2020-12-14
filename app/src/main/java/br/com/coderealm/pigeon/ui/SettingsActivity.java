@@ -18,10 +18,6 @@ import com.google.android.material.snackbar.Snackbar;
 import br.com.coderealm.pigeon.R;
 import br.com.coderealm.pigeon.api.services.TestEndpoint;
 import br.com.coderealm.pigeon.helps.SessionManager;
-import co.mobiwise.materialintro.shape.Focus;
-import co.mobiwise.materialintro.shape.FocusGravity;
-import co.mobiwise.materialintro.shape.ShapeType;
-import co.mobiwise.materialintro.view.MaterialIntroView;
 
 public class SettingsActivity extends AppCompatActivity {
 
