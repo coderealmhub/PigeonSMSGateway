@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Pigeon SMS Gateway</string>
+    <string name="app_first_name">Pigeon</string>
+    <string name="app_last_name">SMS Gateway</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="text1">Accede a nuestro menú de opciones o envía un mensaje ahora.</string>
+    <string name="text2">Confirme el número y el mensaje antes de enviar el mensaje</string>
+
+    <string name="about">Acerca de</string>
+    <string name="who_developed">
+        La aplicación Pigeon SMS Gateway fue desarrollada y mantenida por
+        <a href="https://code.realmapp.com.br">CodeRealm</a>.
+    </string>
+
+    <string name="documentation_title">Documentación</string>
+    <string name="settings_title">Ajustes</string>
+    <string name="sms_list_title">Tus mensajes</string>
+    <string name="documentation_link">Ir a la documentación</string>
+
+    <string name="hint_phone">Ingrese el número de celular</string>
+    <string name="hint_message">Escribe tu mensaje</string>
+
+    <string name="btn_send">Enviar mensaje</string>
+    <string name="btn_save">Guardar ajustes</string>
+
+    <string name="menu_options">Menú de opciones</string>
+    <string name="menu_sms">SMS</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_documentation">Docs</string>
+
+    <string name="number">Número</string>
+    <string name="message">Mensaje</string>
+
+    <string name="endpoint">Endpoint</string>
+    <string name="interval">Intervalo (milis)</string>
+    <string name="device_id">ID del dispositivo</string>
+    <string name="enable_sms_sending">Habilitar el envío de SMS</string>
+
+
+    <string name="poweredBy">CodeRealm.</string>
+
+    <string name="title_activity_sms">SMS</string>
+    <string name="title_activity_settings">Ajustes</string>
+
+    <string name="gateway_enabled">Gateway habilitado</string>
+    <string name="gateway_disabled">Gateway deshabilitado</string>
+
+    <string name="message_sent">Mensage enviada</string>
+    <string name="message_failed">Error al enviar el mensaje</string>
+
+    <string name="disconnect">Desconectar</string>
+    <string name="connect">Conectar</string>
+    <string name="disconnect_gateway">¿Está seguro de que desea desconectar el Gateway? ¡Ya no se enviarán SMS!</string>
+    <string name="message_start">Cuando inicie el Gateway, sus créditos se utilizarán para enviar SMS.</string>
+    <string name="start">Comenzar</string>
+    <string name="stop">Detener</string>
+    <string name="oops">Oops...</string>
+    <string name="no_internet">Parece que no tienes conexión a Internet :(</string>
+
+    <string name="see_messages">Ver mensajes enviados</string>
+    <string name="messages_sent_title">Mensajes enviados</string>
+
+    <string name="sms_from">SMS de:</string>
+
+
+
+</resources>

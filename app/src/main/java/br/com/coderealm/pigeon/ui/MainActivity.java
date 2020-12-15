@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
                             .setTitleText("Conectar")
-                            .setContentText("Ao iniciar o Gateway seus créditos ou bonus seram consumidos para envio de SMS!")
+                            .setContentText("Ao iniciar o Gateway seus créditos ou bonus serem consumidos para envio de SMS!")
                             .setConfirmText("Iniciar")
                             .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                                     } else {
                                         new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
                                                 .setTitleText("Oops...")
-                                                .setContentText("Parace que você está sem conexão com a internet :(")
+                                                .setContentText("Parece que você está sem conexão com a internet :(")
                                                 .show();
                                     }
                                 }

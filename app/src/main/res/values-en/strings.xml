@@ -46,4 +46,19 @@
     <string name="gateway_disabled">Gateway disabled</string>
     <string name="message_sent">Message sent</string>
     <string name="message_failed">Failed to send message</string>
+
+    <string name="disconnect">Disconnect</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect_gateway">Are you sure you want to disconnect the Gateway? SMS will no longer be sent!</string>
+    <string name="message_start">When you start the Gateway, your credits or bonuses will be consumed for sending SMS!</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="oops">Oops...</string>
+    <string name="no_internet">It looks like you have no internet connection :(</string>
+
+    <string name="see_messages">See sent messages</string>
+    <string name="messages_sent_title">Sent messages</string>
+
+    <string name="sms_from">SMS from:</string>
+
 </resources>

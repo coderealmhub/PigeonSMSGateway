@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class SMSActivity extends AppCompatActivity {
     private EditText number, message;
     private Button send;
 
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class SMSActivity extends AppCompatActivity {
         number = findViewById(R.id.number);
         message = findViewById(R.id.message);
         send = findViewById(R.id.send);
+
+        ImageView btn_sms_list = findViewById(R.id.btn_sms_list);
+        btn_sms_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SMSActivity.this, SMSListActivity.class));
+            }
+        });
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
