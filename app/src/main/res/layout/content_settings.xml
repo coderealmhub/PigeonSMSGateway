@@ -120,7 +120,7 @@
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/interval"
-                        android:imeOptions="actionNext"
+                        android:imeOptions="actionDone"
                         android:inputType="number"
                         android:textColor="@color/black" />
 
@@ -171,6 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_margin="8dp"
+
                         android:background="@null"
                         android:fontFamily="@font/mreg"
                         android:hint="@string/device_id"

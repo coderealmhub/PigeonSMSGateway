@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (sessionManager.getKeyStatusGateway()) {
                     new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Desconectar")
-                            .setContentText("Tem certeza que você deseja desconectar o Gateway? As SMS deixarão de ser enviadas!")
-                            .setConfirmText("Parar")
+                            .setTitleText(R.string.disconnect)
+                            .setContentText(getString(R.string.disconnect_gateway))
+                            .setConfirmText(getString(R.string.stop))
                             .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
                                 public void onClick(SweetAlertDialog sDialog) {
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
                     btn_switch.setChecked(sessionManager.getKeyStatusGateway());
                 } else {
                     new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Conectar")
-                            .setContentText("Ao iniciar o Gateway seus créditos ou bonus serem consumidos para envio de SMS!")
-                            .setConfirmText("Iniciar")
+                            .setTitleText(R.string.connect)
+                            .setContentText(getString(R.string.connect_gateway))
+                            .setConfirmText(getString(R.string.start))
                             .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
                                 public void onClick(SweetAlertDialog sDialog) {
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                                         btn_switch.setChecked(sessionManager.getKeyStatusGateway());
                                     } else {
                                         new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
-                                                .setTitleText("Oops...")
-                                                .setContentText("Parece que você está sem conexão com a internet :(")
+                                                .setTitleText(R.string.oops)
+                                                .setContentText(getString(R.string.no_internet))
                                                 .show();
                                     }
                                 }

@@ -49,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
                 ClipData clip = ClipData.newPlainText("label", sessionManager.getKeyDeviceKey());
                 clipboard.setPrimaryClip(clip);
 
-                Snackbar.make(v, "Copiado!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(v, R.string.copied, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
@@ -59,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
                 new TestEndpoint(SettingsActivity.this).execute();
                 sessionManager.setKeyEndpoint(endpoint.getText().toString().trim());
                 sessionManager.setKeyInterval(interval.getText().toString().trim());
-                Snackbar.make(v, "Configurações salvas!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(v, R.string.saved_settings, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 

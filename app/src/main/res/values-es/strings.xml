@@ -51,7 +51,7 @@
     <string name="disconnect">Desconectar</string>
     <string name="connect">Conectar</string>
     <string name="disconnect_gateway">¿Está seguro de que desea desconectar el Gateway? ¡Ya no se enviarán SMS!</string>
-    <string name="message_start">Cuando inicie el Gateway, sus créditos se utilizarán para enviar SMS.</string>
+    <string name="connect_gateway">Cuando inicie el Gateway, sus créditos se utilizarán para enviar SMS.</string>
     <string name="start">Comenzar</string>
     <string name="stop">Detener</string>
     <string name="oops">Oops...</string>
@@ -61,6 +61,9 @@
     <string name="messages_sent_title">Mensajes enviados</string>
 
     <string name="sms_from">SMS de:</string>
+
+    <string name="copied">Copied!</string>
+    <string name="saved_settings">Configuraciones guardadas</string>
 
 
 

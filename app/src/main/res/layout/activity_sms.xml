@@ -9,6 +9,8 @@
 
     <include layout="@layout/content_sms" />
 
+    <include layout="@layout/menu_options_two" />
+
 
 
 
