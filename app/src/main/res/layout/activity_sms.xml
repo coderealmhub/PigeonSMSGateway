@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_greedient"
-    tools:context=".ui.SMSActivity">
+    tools:context=".ui.SMSActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
 
     <include layout="@layout/content_sms" />
 
