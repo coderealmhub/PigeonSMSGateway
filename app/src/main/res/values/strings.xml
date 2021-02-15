@@ -47,7 +47,7 @@
 
     <string name="message_sent">Mensagem enviada</string>
     <string name="message_failed">Falha no envio da mensagem</string>
-
+    <string name="message_btn_switch">Olá!</string>
     <string name="disconnect">Desconectar</string>
     <string name="connect">Conectar</string>
     <string name="disconnect_gateway">Tem certeza que você deseja desconectar o Gateway? As SMS deixarão de ser enviadas!</string>

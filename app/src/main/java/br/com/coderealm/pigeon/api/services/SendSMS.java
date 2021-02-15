@@ -37,7 +37,7 @@ public class SendSMS extends AsyncTask<Integer, Integer, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
-        String SEND_URL = sessionManager.getKeyEndpoint() + "/send/" + sessionManager.getKeyDeviceKey();
+        String SEND_URL = sessionManager.getKeyEndpoint() + "/" + sessionManager.getKeyDeviceKey();
         Timber.d("Request: " + SEND_URL);
 
         StringRequest request = new StringRequest(Request.Method.GET, SEND_URL, new Response.Listener<String>() {

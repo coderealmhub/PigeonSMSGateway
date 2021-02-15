@@ -1,7 +1,10 @@
 package br.com.coderealm.pigeon.ui;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
+        }
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED) {
+                Log.d("permission", "permission denied to SEND_SMS - requesting it");
+                String[] permissions = {Manifest.permission.SEND_SMS};
+                requestPermissions(permissions, 1);
+            }
         }
 
         sessionManager = new SessionManager(MainActivity.this);
@@ -105,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
 

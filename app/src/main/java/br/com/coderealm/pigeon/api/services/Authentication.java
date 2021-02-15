@@ -10,6 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,12 +21,12 @@ import br.com.coderealm.pigeon.helps.SessionManager;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import timber.log.Timber;
 
-public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
+public class Authentication extends AsyncTask<Integer, Integer, String> {
 
     private Context context;
     private SessionManager sessionManager;
 
-    public TestEndpoint(Context context) {
+    public Authentication(Context context) {
         this.context = context;
         sessionManager = new SessionManager(context);
     }
@@ -47,20 +48,21 @@ public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
                 Timber.d("Response: " + response);
 
                 try {
-                    JSONObject jObj = new JSONObject(response);
-                    String title = jObj.getString("title");
-                    String description = jObj.getString("description");
-                    String docs = jObj.getString("docs");
-                    String redoc = jObj.getString("redoc");
-                    String version = jObj.getString("version");
+                    JSONObject jsonObject = new JSONObject(response);
+                    boolean error = jsonObject.getBoolean("error");
 
-                    if (!title.isEmpty()) {
+                    //String title = jObj.getString("title");
+                    //String version = jObj.getString("version");
+
+                    // .setContentText(title + " " + version)
+
+                    if (!error) { // !title.isEmpty()
                         new SweetAlertDialog(context)
                                 .setTitleText("Endpoint Verificado!")
-                                .setContentText(title + " " + version)
+                                .setContentText("Pigeon v.0.0.1")
                                 .show();
                     } else {
-                        String message = jObj.getString("message");
+                        //String message = jsonArray.getString("message");
                         new SweetAlertDialog(context)
                                 .setTitleText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
                                 .show();
@@ -70,7 +72,7 @@ public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
                     e.printStackTrace();
                     Timber.e("Error: " + e.getMessage());
                     new SweetAlertDialog(context)
-                            .setTitleText(e.getMessage())
+                            .setTitleText("Error") // e.getMessage()
                             .setContentText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
                             .show();
                 }
@@ -81,7 +83,7 @@ public class TestEndpoint extends AsyncTask<Integer, Integer, String> {
             public void onErrorResponse(VolleyError error) {
                 Timber.e("Error: " + error.getMessage());
                 new SweetAlertDialog(context)
-                        .setTitleText(error.getMessage())
+                        .setTitleText("Erro") // error.getMessage()
                         .setContentText("Endpoint não encontrado! Verifique se o mesmo está ativado.")
                         .show();
             }

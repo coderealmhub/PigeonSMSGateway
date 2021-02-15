@@ -5,11 +5,14 @@ import android.content.SharedPreferences;
 
 public class SessionManager {
 
-    private static final String PREFERENCES_NAME = "PingeonSMSGateway";
+    private static final String PREFERENCES_NAME = "pingeon_sms_gateway";
     private static final String KEY_STATUS_GATEWAY = "status_gateway";
     private static final String KEY_ENDPOINT = "endpoint";
     private static final String KEY_INTERVAL = "interval";
-    private static final String KEY_DEVICE_KEY = "device_KEY";
+    private static final String KEY_DEVICE_KEY = "device_key";
+    private static final String KEY_ACCESS_TOKEN = "access_token";
+    private static final String KEY_TOKEN_TYPE = "token_type";
+
     private Context context;
     private int PRIVATE_MODE = 0;
     private SharedPreferences sharedPreferences;
@@ -59,6 +62,24 @@ public class SessionManager {
 
     public void setKeyDeviceKey(String deviceKey) {
         editor.putString(KEY_DEVICE_KEY, deviceKey);
+        editor.commit();
+    }
+
+    public String getKeyAccessToken() {
+        return sharedPreferences.getString(KEY_ACCESS_TOKEN, "");
+    }
+
+    public void setKeyAccessToken(String accessToken) {
+        editor.putString(KEY_ACCESS_TOKEN, accessToken);
+        editor.commit();
+    }
+
+    public String getKeyTokenType() {
+        return sharedPreferences.getString(KEY_TOKEN_TYPE, "");
+    }
+
+    public void setKeyTokenType(String tokenType) {
+        editor.putString(KEY_TOKEN_TYPE, tokenType);
         editor.commit();
     }
 

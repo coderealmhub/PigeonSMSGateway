@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import br.com.coderealm.pigeon.R;
-import br.com.coderealm.pigeon.api.services.TestEndpoint;
+import br.com.coderealm.pigeon.api.services.Authentication;
 import br.com.coderealm.pigeon.helps.SessionManager;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -56,7 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
         save_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new TestEndpoint(SettingsActivity.this).execute();
+                new Authentication(SettingsActivity.this).execute();
                 sessionManager.setKeyEndpoint(endpoint.getText().toString().trim());
                 sessionManager.setKeyInterval(interval.getText().toString().trim());
                 Snackbar.make(v, R.string.saved_settings, Snackbar.LENGTH_LONG).setAction("Action", null).show();
